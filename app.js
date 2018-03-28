@@ -3,6 +3,8 @@ const app = express();
 const path = require("path");
 const axios = require('axios');
 
+const PORT = process.env.PORT || 3000;
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
@@ -20,5 +22,4 @@ app.get('/axios', function (req, res) {
         });
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
-//app.listen(process.env.PORT, () => console.log('Example app listening on port 3000!'));
+app.listen(PORT, () => console.log('Example app listening on port 3000!'));
